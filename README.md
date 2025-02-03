@@ -1,9 +1,7 @@
-# Sentinel policies for Amazon FSx for Windows File Server
+# Amazon FSx for Windows File Server Sentinel Policies for Terraform
 
 This repository provides Sentinel policies for Amazon FSx for Windows File Server to be used within either HCP Terraform or Terraform Enterprise.
 
-## Policies
+## Policies included
 
-| Scope                              | Rule                                        | Description                                                                                | Enforcement level | URLs                                          |
-|------------------------------------|---------------------------------------------|--------------------------------------------------------------------------------------------|-------------------|-----------------------------------------------|
-| Amazon FSx for Windows File Server | deny-fsx-win-deletion                       | Prevents data-loss by denying the deletion of Amazon FSx for Windows File Server resources | hard-mandatory    | [doc](docs/policies/deny-fsx-win-deletion.md) | 
+- Prevent data-loss by denying the deletion of Amazon FSx for Windows File Server resources ([docs](docs/policies/deny-fsx-win-deletion.md) | [code](policies/deny-fsx-win-deletion/deny-fsx-win-deletion.sentinel))
