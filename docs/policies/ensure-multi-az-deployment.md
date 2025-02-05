@@ -16,6 +16,6 @@ resource "aws_fsx_windows_file_system" "example" {
   subnet_ids           = [aws_subnet.foo.id]
   throughput_capacity  = 2048
   copy_tags_to_backups = false
-  deployment_type = "MULTI_AZ_1"
+  deployment_type      = "MULTI_AZ_1"
 }
 ```
