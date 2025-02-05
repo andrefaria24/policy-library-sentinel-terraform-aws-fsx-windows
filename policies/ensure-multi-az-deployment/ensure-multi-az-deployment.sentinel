@@ -1,0 +1,15 @@
+# Ensure that Amazon FSx for Windows file servers are deployed with a Multi-AZ setup
+
+import "tfplan/v2" as tfplan
+
+ensure_multi_az_deployment = rule {
+  any tfplan.resource_changes as _, rc {
+      rc.type is "aws_fsx_windows_file_system" and
+      rc.change.actions is ["create"] and
+      rc.change.after.deployment_type is "MULTI_AZ_1"
+  }
+}
+
+main = rule {
+  ensure_multi_az_deployment
+}
